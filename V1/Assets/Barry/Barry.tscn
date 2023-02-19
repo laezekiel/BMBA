@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://barry1.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Assets/light/character_Halo.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 40.0
+height = 96.0
+
+[node name="Barry" type="KinematicBody2D"]
+
+[node name="anim" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "idleLeft"
+speed_scale = 0.5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 2 )
