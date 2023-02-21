@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Animations/Player/Barry/Barry_V1.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Player/Player.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/Player/BarryCamera.cs" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="Barry" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
+cameraPath = NodePath("Camera2D")
+bodyPath = NodePath("Body")
+
+[node name="Body" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "walk with cane"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 3 )

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Animations/Player/Tools/Dog/Dog_V1.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Player/Tools/Dog.cs" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Dog" type="KinematicBody2D"]
+script = ExtResource( 3 )
+dogBodyPath = NodePath("dogBody")
+
+[node name="dogBody" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "walk with dog"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
